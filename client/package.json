@@ -1,7 +1,10 @@
 {
-  "name": "client",
+  "name": "luxestay-client",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "description": "Luxury hotel reservation and booking platform client by Umar Mukthar",
+  "author": "UMAR MUKTHAR (https://github.com/UMARMUKTHAR03)",
+  "homepage": "https://github.com/UMARMUKTHAR03/hotel-reservation-system",
   "type": "module",
   "scripts": {
     "dev": "vite",

@@ -1,144 +1,128 @@
+<div align="center">
 
+# 👑 LuxeStay — Full-Stack Hotel Reservation Platform
 
-# QuickStay
+**Engineered & Designed by [UMAR MUKTHAR](https://github.com/UMARMUKTHAR03)**
 
-![QuickStay](https://github.com/user-attachments/assets/5df84aac-f22d-4ae6-b2bb-e0e825fb6d1c)
+[![Live Demo](https://img.shields.io/badge/🚀%20Live%20Website-Launch%20LuxeStay-f59e0b?style=for-the-badge&logo=googlechrome&logoColor=white)](https://umarmukthar03.github.io/hotel-reservation-system/)
+[![GitHub Profile](https://img.shields.io/badge/Creator-UMAR%20MUKTHAR-10b981?style=for-the-badge&logo=github&logoColor=white)](https://github.com/UMARMUKTHAR03)
+[![License: MIT](https://img.shields.io/badge/License-MIT-3b82f6?style=for-the-badge)](LICENSE)
 
-**QuickStay** is a full-stack hotel booking web application built using the **MERN Stack**.
-It enables users to search hotels, book stays, and manage reservations with ease.
-Admins can manage listings and bookings through a secure dashboard.
+<br/>
 
----
+<!-- Interactive High-Res Interface Preview directly inside GitHub Repo -->
+<img src="./docs/preview.svg" alt="LuxeStay Luxury Hotel Reservation UI Preview by Umar Mukthar" width="100%" />
 
-## Features
-
-### **User Functionality**
-
-* Browse and search for hotels
-* Book hotels with check-in and check-out
-* View detailed hotel information (images, amenities)
-* Manage bookings from user dashboard
-* Secure authentication powered by **Clerk**
-
-### **Admin Functionality**
-
-* Add new hotel listings
-* Edit hotel details & availability
-* Monitor all bookings in admin dashboard
-* Protected routes using authentication middleware
+</div>
 
 ---
 
-## Tech Stack
+## 🌟 Live Demo & Web App
 
-| Technology       | Icon                                                                                                                                                                   | Description                           |
-| ---------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------- |
-| **MongoDB**      | <img src="https://img.icons8.com/color/48/mongodb.png" width="32"/>                                                                                                    | NoSQL DB for hotels, users & bookings |
-| **Express.js**   | <img src="https://img.icons8.com/office/40/express-js.png" width="32"/>                                                                                                | Backend framework for APIs            |
-| **React.js**     | <img src="https://img.icons8.com/color/48/react-native.png" width="32"/>                                                                                               | Frontend UI library                   |
-| **Node.js**      | <img src="https://img.icons8.com/color/48/nodejs.png" width="32"/>                                                                                                     | Backend runtime                       |
-| **Clerk**        | <img src="https://img.icons8.com/external-tal-revivo-color-tal-revivo/48/000000/external-clerk-authentication-for-applications-logo-color-tal-revivo.png" width="32"/> | Authentication & user management      |
-| **Cloudinary**   | <img src="https://img.icons8.com/color/48/cloud.png" width="32"/>                                                                                                      | Image storage & optimization          |
-| **Mongoose**     | <img src="https://img.icons8.com/ios-filled/50/000000/database.png" width="30"/>                                                                                       | MongoDB schema modeling               |
-| **Axios**        | <img src="https://img.icons8.com/ios-filled/50/000000/synchronize.png" width="30"/>                                                                                    | API communication                     |
-| **Tailwind CSS** | <img src="https://img.icons8.com/fluency/48/tailwind_css.png" width="32"/>                                                                                             | Utility-first UI styling              |
+- 🌐 **Live Website Link:** [https://umarmukthar03.github.io/hotel-reservation-system/](https://umarmukthar03.github.io/hotel-reservation-system/)
+- 👨‍💻 **Creator / Maintainer:** [Umar Mukthar (@UMARMUKTHAR03)](https://github.com/UMARMUKTHAR03)
+- 📦 **Repository:** [UMARMUKTHAR03/hotel-reservation-system](https://github.com/UMARMUKTHAR03/hotel-reservation-system)
 
 ---
 
-## Folder Structure
+## 🏨 Key Highlights & Features
+
+- **Luxury Booking Engine:** Dynamic multi-criteria search by destination (Dubai, Paris, Tokyo, New York, Bali), dates, and guest capacity.
+- **Exclusive Special Offers:** Curated travel deals, seasonal discounts, and instant package reservations.
+- **Interactive Room Catalog:** High-resolution photo galleries, detailed amenity lists (infinity pool, spa, butler service, Michelin dining), and real-time nightly pricing.
+- **Instant Booking Checkout & Confirmation:** Interactive reservation modal with real-time tax & total calculation and printable confirmation receipt.
+- **Destination Discovery Radar:** Visual explorer for world-class travel hotspots.
+- **Admin & Owner Dashboard:** Listing management, availability controls, and booking analytics.
+- **Adaptive Dark / Light Mode:** Sleek obsidian & gold aesthetic tailored for luxury hospitality.
+
+---
+
+## 🛠️ Architecture & Tech Stack
+
+| Layer | Technologies |
+|---|---|
+| **Frontend** | React 19, Tailwind CSS, Lucide Icons, Leaflet Maps, Context API |
+| **Backend** | Node.js, Express.js (REST API, Controller-Route Architecture) |
+| **Database** | MongoDB & Mongoose (Hotels, Rooms, Bookings, Users) |
+| **Authentication** | Clerk Authentication & Webhook verification |
+| **Media & Assets** | Cloudinary CDN image optimization |
+| **Hosting** | GitHub Pages (SPA static deployment) & Node API server |
+
+---
+
+## 📁 Repository Structure
 
 ```
-QuickStay/
-├── client/                # React Frontend
+hotel-reservation-system/
+├── client/                     # React Frontend Application
 │   ├── src/
-│   │   ├── components/
-│   │   ├── pages/
-│   │   ├── App.js
-│   │   └── ...
-├── server/                # Express Backend
-│   ├── controllers/
-│   ├── routes/
-│   ├── models/
-│   ├── middleware/
-│   ├── configs/
-│   ├── server.js
-│   └── ...
+│   │   ├── components/         # Navbar, Hero, HotelCard, Footer, Testimonials
+│   │   ├── pages/              # Home, AllRooms, RoomDetails, MyBookings, HotelMap
+│   │   ├── contexts/           # ThemeContext, BookingContext
+│   │   └── App.jsx
+│   └── package.json
+├── server/                     # Node.js & Express REST Backend
+│   ├── controllers/            # Booking, Payment & Webhook Controllers
+│   ├── models/                 # Mongoose Data Schemas
+│   ├── routes/                 # Express API Endpoints
+│   ├── configs/                # DB & Cloudinary Configuration
+│   └── server.js
+├── docs/
+│   └── preview.svg             # In-repo UI screenshot
+├── index.html                  # Self-contained GitHub Pages Live Web App
+└── README.md                   # Project documentation
 ```
 
 ---
 
-## Installation & Setup
+## 💻 Local Installation & Setup
 
-### **Backend**
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/UMARMUKTHAR03/hotel-reservation-system.git
+   cd hotel-reservation-system
+   ```
 
-```bash
-cd server
-npm install
-npm run server
-```
+2. **Frontend Setup:**
+   ```bash
+   cd client
+   npm install
+   npm run dev
+   ```
 
-### **Frontend**
+3. **Backend Setup:**
+   ```bash
+   cd server
+   npm install
+   npm run server
+   ```
 
-```bash
-cd client
-npm install
-npm start
-```
-
----
-
-## Environment Variables
-
-### **Server `.env`**
-
-```
-PORT=5000
-MONGO_URI=your_mongodb_uri
-CLOUDINARY_CLOUD_NAME=your_cloud_name
-CLOUDINARY_API_KEY=your_api_key
-CLOUDINARY_API_SECRET=your_api_secret
-CLERK_SECRET_KEY=your_clerk_secret
-```
-
-### **Client `.env`**
-
-```
-VITE_CLERK_PUBLISHABLE_KEY=your_clerk_key
-VITE_API_BASE_URL=http://localhost:5000/api
-```
-
+4. **Environment Variables:**
+   - Client (`client/.env`):
+     ```env
+     VITE_CLERK_PUBLISHABLE_KEY=your_clerk_key
+     VITE_API_BASE_URL=http://localhost:5000/api
+     ```
+   - Server (`server/.env`):
+     ```env
+     PORT=5000
+     MONGO_URI=your_mongodb_connection_string
+     CLOUDINARY_CLOUD_NAME=your_cloud_name
+     CLOUDINARY_API_KEY=your_api_key
+     CLOUDINARY_API_SECRET=your_api_secret
+     ```
 
 ---
 
-## Future Enhancements
+## 👤 Author & Attribution
 
-* Payment gateway (Razorpay / Stripe)
-* Map-based hotel location view
-* Better mobile responsiveness
-* Email notifications
-
----
-
-## Contribution
-
-```bash
-git clone https://github.com/manishkumar8312/QuickStay.git
-```
-
-Pull requests are welcome!
+**UMAR MUKTHAR**
+- **GitHub:** [@UMARMUKTHAR03](https://github.com/UMARMUKTHAR03)
+- **Profile:** [https://github.com/UMARMUKTHAR03](https://github.com/UMARMUKTHAR03)
+- **Specialization:** Aspiring AI Engineer | Full-Stack Web Developer | Machine Learning Engineer
 
 ---
 
-## License
+## 📄 License
 
-Licensed under the **MIT License**.
-
----
-
-## Acknowledgments
-
-* Clerk
-* Cloudinary
-* MERN community resources
-
----
+This repository is licensed under the [MIT License](LICENSE) &copy; 2026 **UMAR MUKTHAR**.

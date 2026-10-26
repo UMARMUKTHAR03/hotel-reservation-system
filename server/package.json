@@ -1,16 +1,17 @@
 {
-  "name": "server",
+  "name": "luxestay-server",
   "version": "1.0.0",
-  "description": "",
+  "description": "LuxeStay hotel reservation REST API backend by Umar Mukthar",
   "main": "server.js",
+  "author": "UMAR MUKTHAR (https://github.com/UMARMUKTHAR03)",
+  "homepage": "https://github.com/UMARMUKTHAR03/hotel-reservation-system",
   "type": "module",
   "scripts": {
     "server": "nodemon server.js",
     "start": "node server.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": ["hotel-booking", "mern", "reservation", "umar-mukthar"],
+  "license": "MIT",
   "dependencies": {
     "@clerk/clerk-sdk-node": "^4.13.23",
     "@clerk/express": "^1.7.2",
