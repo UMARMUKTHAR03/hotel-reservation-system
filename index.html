@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LuxeStay • Luxury Hotel &amp; Resort Reservations | by Umar Mukthar</title>
+  <meta name="description" content="Discover and book the world's most luxurious hotels, private villas, and beachfront resorts. Designed and engineered by Umar Mukthar." />
+  <meta name="author" content="UMAR MUKTHAR" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👑</text></svg>" />
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            serif: ['"Playfair Display"', 'serif'],
+          },
+          colors: {
+            gold: {
+              400: '#fbbf24',
+              500: '#f59e0b',
+              600: '#d97706',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar { width: 6px; height: 6px; }
+    ::-webkit-scrollbar-track { background: rgba(15, 20, 35, 0.6); }
+    ::-webkit-scrollbar-thumb { background: rgba(245, 158, 11, 0.4); border-radius: 9999px; }
+    ::-webkit-scrollbar-thumb:hover { background: rgba(245, 158, 11, 0.8); }
+
+    .glass-card {
+      background: rgba(17, 24, 39, 0.8);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.6);
+    }
+
+    .glass-pill {
+      background: rgba(31, 41, 55, 0.7);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .ambient-glow {
+      position: fixed;
+      width: 550px;
+      height: 550px;
+      border-radius: 50%;
+      filter: blur(140px);
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.15;
+    }
+  </style>
+</head>
+<body class="bg-[#090d16] text-slate-100 min-h-screen selection:bg-amber-500 selection:text-black antialiased font-sans relative overflow-x-hidden">
+
+  <!-- Ambient Glows -->
+  <div class="ambient-glow bg-amber-500 top-[-100px] left-[-100px]"></div>
+  <div class="ambient-glow bg-indigo-600 bottom-[-100px] right-[-100px]"></div>
+
+  <div class="relative z-10">
+
+    <!-- Top Sticky Navigation -->
+    <header class="sticky top-0 z-40 bg-[#090d16]/85 backdrop-blur-md border-b border-slate-800/80">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl h-20 flex items-center justify-between">
+        
+        <!-- Logo -->
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-amber-500 via-amber-400 to-yellow-300 flex items-center justify-center text-xl shadow-lg shadow-amber-500/25">
+            👑
+          </div>
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="text-xl font-extrabold tracking-tight text-white font-serif">LuxeStay</span>
+              <span class="text-[9px] font-bold uppercase tracking-wider bg-amber-500/20 text-amber-400 px-2 py-0.5 rounded-full border border-amber-500/30">Luxury Stays</span>
+            </div>
+            <p class="text-[11px] text-slate-400 font-medium">Engineered by <a href="https://github.com/UMARMUKTHAR03" target="_blank" class="text-amber-400 font-bold hover:underline">Umar Mukthar</a></p>
+          </div>
+        </div>
+
+        <!-- Desktop Nav Links -->
+        <nav class="hidden md:flex items-center gap-8 text-sm font-semibold text-slate-300">
+          <a href="#stays" class="hover:text-amber-400 transition-colors">Hotels &amp; Suites</a>
+          <a href="#offers" class="hover:text-amber-400 transition-colors">Exclusive Deals</a>
+          <a href="#destinations" class="hover:text-amber-400 transition-colors">Destinations</a>
+          <a href="#testimonials" class="hover:text-amber-400 transition-colors">Reviews</a>
+        </nav>
+
+        <!-- CTA & Creator -->
+        <div class="flex items-center gap-3">
+          <button onclick="document.getElementById('stays').scrollIntoView({behavior: 'smooth'})" class="hidden sm:flex glass-pill hover:border-amber-500/50 text-slate-200 hover:text-white px-3.5 py-2 rounded-xl text-xs font-semibold items-center gap-1.5 transition-all">
+            <span>🛎️</span>
+            <span>Explore Rooms</span>
+          </button>
+
+          <a href="https://github.com/UMARMUKTHAR03" target="_blank" class="bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-black px-4 py-2 rounded-xl text-xs font-extrabold flex items-center gap-1.5 shadow-lg shadow-amber-500/25 transition-all">
+            <span>@UMARMUKTHAR03</span>
+            <span>↗</span>
+          </a>
+        </div>
+
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative pt-12 pb-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto text-center">
+      <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full glass-pill border border-amber-500/30 text-amber-400 text-xs font-semibold mb-6">
+        <span class="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse"></span>
+        <span>The World's Finest Luxury Hospitality Network</span>
+      </div>
+
+      <h1 class="font-serif text-4xl sm:text-6xl lg:text-7xl font-extrabold text-white tracking-tight leading-tight max-w-4xl mx-auto">
+        Discover Sanctuary in <br class="hidden sm:inline" />
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-amber-400 to-yellow-200">Unmatched Elegance</span>
+      </h1>
+
+      <p class="text-slate-400 text-sm sm:text-base max-w-2xl mx-auto mt-4 font-normal">
+        From private overwater villas in the Maldives to historic suites in Paris, experience extraordinary hospitality curated by Umar Mukthar.
+      </p>
+
+      <!-- Search & Reservation Widget -->
+      <div class="glass-card rounded-3xl p-4 sm:p-6 max-w-4xl mx-auto mt-10 text-left">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 items-center">
+          
+          <!-- Destination -->
+          <div class="glass-pill p-3 rounded-2xl">
+            <span class="text-[10px] font-bold uppercase tracking-wider text-amber-400 block mb-1">Destination</span>
+            <select id="searchCity" class="w-full bg-transparent text-white font-bold text-sm outline-none cursor-pointer">
+              <option value="All" class="bg-slate-900 text-white">All Global Cities</option>
+              <option value="Dubai" class="bg-slate-900 text-white">Dubai, UAE</option>
+              <option value="Paris" class="bg-slate-900 text-white">Paris, France</option>
+              <option value="Tokyo" class="bg-slate-900 text-white">Tokyo, Japan</option>
+              <option value="New York" class="bg-slate-900 text-white">New York, USA</option>
+              <option value="Maldives" class="bg-slate-900 text-white">Maldives Atoll</option>
+              <option value="London" class="bg-slate-900 text-white">London, UK</option>
+              <option value="Bali" class="bg-slate-900 text-white">Bali, Indonesia</option>
+            </select>
+          </div>
+
+          <!-- Check-in -->
+          <div class="glass-pill p-3 rounded-2xl">
+            <span class="text-[10px] font-bold uppercase tracking-wider text-slate-400 block mb-1">Check-in</span>
+            <input type="date" id="checkInDate" class="w-full bg-transparent text-white font-bold text-sm outline-none cursor-pointer" />
+          </div>
+
+          <!-- Check-out -->
+          <div class="glass-pill p-3 rounded-2xl">
+            <span class="text-[10px] font-bold uppercase tracking-wider text-slate-400 block mb-1">Check-out</span>
+            <input type="date" id="checkOutDate" class="w-full bg-transparent text-white font-bold text-sm outline-none cursor-pointer" />
+          </div>
+
+          <!-- CTA Search -->
+          <div>
+            <button id="searchBtn" class="w-full bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-black py-4 px-6 rounded-2xl text-sm font-extrabold flex items-center justify-center gap-2 shadow-xl shadow-amber-500/25 transition-all">
+              <span>🔍</span>
+              <span>Find Stays</span>
+            </button>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Special Offers Ribbon -->
+    <section id="offers" class="py-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <div class="flex items-center justify-between mb-8">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-widest text-amber-400">Exclusive Travel Benefits</span>
+          <h2 class="font-serif text-2xl sm:text-3xl font-bold text-white mt-1">Curated Seasonal Privileges</h2>
+        </div>
+        <span class="text-xs text-slate-400 font-medium hidden sm:inline">Limited Availability</span>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        
+        <!-- Offer 1 -->
+        <div class="glass-card rounded-3xl p-6 relative overflow-hidden group hover:border-amber-500/40 transition-all">
+          <div class="absolute -right-6 -bottom-6 text-7xl opacity-10 select-none">🌴</div>
+          <span class="inline-block px-3 py-1 rounded-full bg-amber-500/20 text-amber-400 text-xs font-bold border border-amber-500/30 mb-3">25% OFF</span>
+          <h3 class="font-serif text-xl font-bold text-white">Summer Oasis Escape</h3>
+          <p class="text-slate-400 text-xs mt-2 leading-relaxed">Complimentary daily breakfast, spa credit, and private chauffeured airport transfers.</p>
+          <div class="mt-4 pt-4 border-t border-slate-800 flex items-center justify-between text-xs">
+            <span class="text-slate-500">Valid until Dec 2026</span>
+            <button onclick="quickFilterCity('Dubai')" class="text-amber-400 font-bold hover:underline">Claim Benefit →</button>
+          </div>
+        </div>
+
+        <!-- Offer 2 -->
+        <div class="glass-card rounded-3xl p-6 relative overflow-hidden group hover:border-amber-500/40 transition-all">
+          <div class="absolute -right-6 -bottom-6 text-7xl opacity-10 select-none">🥂</div>
+          <span class="inline-block px-3 py-1 rounded-full bg-rose-500/20 text-rose-400 text-xs font-bold border border-rose-500/30 mb-3">20% OFF</span>
+          <h3 class="font-serif text-xl font-bold text-white">Romantic Rendezvous</h3>
+          <p class="text-slate-400 text-xs mt-2 leading-relaxed">Chilled champagne upon arrival, candlelit beach dinner, and couple's massage therapy.</p>
+          <div class="mt-4 pt-4 border-t border-slate-800 flex items-center justify-between text-xs">
+            <span class="text-slate-500">Romantic Suites</span>
+            <button onclick="quickFilterCity('Paris')" class="text-amber-400 font-bold hover:underline">Claim Benefit →</button>
+          </div>
+        </div>
+
+        <!-- Offer 3 -->
+        <div class="glass-card rounded-3xl p-6 relative overflow-hidden group hover:border-amber-500/40 transition-all">
+          <div class="absolute -right-6 -bottom-6 text-7xl opacity-10 select-none">💎</div>
+          <span class="inline-block px-3 py-1 rounded-full bg-indigo-500/20 text-indigo-400 text-xs font-bold border border-indigo-500/30 mb-3">30% OFF</span>
+          <h3 class="font-serif text-xl font-bold text-white">Presidential Reserve</h3>
+          <p class="text-slate-400 text-xs mt-2 leading-relaxed">Early reservation discount for extended stays over 5 nights in premium private penthouses.</p>
+          <div class="mt-4 pt-4 border-t border-slate-800 flex items-center justify-between text-xs">
+            <span class="text-slate-500">Elite Members</span>
+            <button onclick="quickFilterCity('Tokyo')" class="text-amber-400 font-bold hover:underline">Claim Benefit →</button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Main Hotel Catalog Section -->
+    <section id="stays" class="py-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      
+      <!-- Filter Bar -->
+      <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-8">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-widest text-amber-400">Handpicked Properties</span>
+          <h2 class="font-serif text-3xl font-bold text-white mt-1">Available Stays &amp; Suites</h2>
+        </div>
+
+        <!-- Category Pills -->
+        <div class="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none max-w-full">
+          <button data-cat="all" class="cat-pill glass-pill px-4 py-2 rounded-xl text-xs font-bold text-slate-300 hover:text-white border-amber-500 bg-amber-500/10 text-amber-400 active-pill">All Stays</button>
+          <button data-cat="Suites" class="cat-pill glass-pill px-4 py-2 rounded-xl text-xs font-bold text-slate-300 hover:text-white">Luxury Suites</button>
+          <button data-cat="Villa" class="cat-pill glass-pill px-4 py-2 rounded-xl text-xs font-bold text-slate-300 hover:text-white">Private Villas</button>
+          <button data-cat="Beachfront" class="cat-pill glass-pill px-4 py-2 rounded-xl text-xs font-bold text-slate-300 hover:text-white">Beachfront</button>
+        </div>
+      </div>
+
+      <!-- Hotel Grid -->
+      <div id="hotelGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Rendered dynamically via JavaScript -->
+      </div>
+
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <div class="text-center mb-12">
+        <span class="text-xs font-bold uppercase tracking-widest text-amber-400">Guest Feedback</span>
+        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-white mt-2">Loved by Discerning Travelers</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        
+        <div class="glass-card rounded-3xl p-6">
+          <div class="text-amber-400 text-sm mb-3">★★★★★</div>
+          <p class="text-slate-300 text-xs leading-relaxed italic">"LuxeStay booked our anniversary stay at the George V in Paris. The bespoke attention, room upgrade, and private tasting menu were utterly unforgettable."</p>
+          <div class="mt-4 pt-4 border-t border-slate-800 flex items-center gap-3">
+            <div class="w-9 h-9 rounded-full bg-slate-800 flex items-center justify-center font-bold text-amber-400 text-xs">ER</div>
+            <div>
+              <p class="text-xs font-bold text-white">Elena Rostova</p>
+              <p class="text-[11px] text-slate-500">London, United Kingdom</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="glass-card rounded-3xl p-6">
+          <div class="text-amber-400 text-sm mb-3">★★★★★</div>
+          <p class="text-slate-300 text-xs leading-relaxed italic">"Seamless confirmation and exceptional concierge support. The Atlantis Royal penthouse in Dubai exceeded every expectation. Umar Mukthar's platform is top class."</p>
+          <div class="mt-4 pt-4 border-t border-slate-800 flex items-center gap-3">
+            <div class="w-9 h-9 rounded-full bg-slate-800 flex items-center justify-center font-bold text-amber-400 text-xs">MK</div>
+            <div>
+              <p class="text-xs font-bold text-white">Marcus Klein</p>
+              <p class="text-[11px] text-slate-500">Zurich, Switzerland</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="glass-card rounded-3xl p-6">
+          <div class="text-amber-400 text-sm mb-3">★★★★★</div>
+          <p class="text-slate-300 text-xs leading-relaxed italic">"A truly five-star experience. The overwater villa booking in the Maldives was flawless from start to finish. Highly recommend LuxeStay for all luxury getaways."</p>
+          <div class="mt-4 pt-4 border-t border-slate-800 flex items-center gap-3">
+            <div class="w-9 h-9 rounded-full bg-slate-800 flex items-center justify-center font-bold text-amber-400 text-xs">SL</div>
+            <div>
+              <p class="text-xs font-bold text-white">Sophia Lauren</p>
+              <p class="text-[11px] text-slate-500">New York, USA</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-800 bg-[#070a12] py-12 px-4 sm:px-6 lg:px-8">
+      <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-xs text-slate-400">
+        
+        <div class="flex items-center gap-3">
+          <span class="text-xl">👑</span>
+          <div>
+            <p class="text-white font-bold">LuxeStay Hospitality Engine</p>
+            <p class="text-slate-500">Designed &amp; Developed by <a href="https://github.com/UMARMUKTHAR03" target="_blank" class="text-amber-400 font-bold hover:underline">UMAR MUKTHAR</a></p>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-6">
+          <a href="https://github.com/UMARMUKTHAR03/hotel-reservation-system" target="_blank" class="text-slate-300 hover:text-white transition-colors">GitHub Repository</a>
+          <a href="https://github.com/UMARMUKTHAR03" target="_blank" class="text-slate-300 hover:text-white transition-colors">Developer Profile</a>
+          <span class="text-slate-600">|</span>
+          <span class="text-amber-400 font-medium">MIT Licensed</span>
+        </div>
+
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- Interactive Booking & Checkout Modal -->
+  <div id="bookingModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex items-center justify-center p-4 hidden">
+    <div class="glass-card rounded-3xl max-w-lg w-full p-6 sm:p-8 relative border border-slate-700 shadow-2xl">
+      <button onclick="closeModal()" class="absolute top-5 right-5 text-slate-400 hover:text-white w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center font-bold text-sm">✕</button>
+      
+      <div id="modalContent">
+        <!-- Step 1: Booking Form -->
+        <div id="bookingStep1">
+          <span class="text-[10px] font-bold uppercase tracking-wider text-amber-400">Instant Reservation</span>
+          <h3 id="modalHotelTitle" class="font-serif text-2xl font-bold text-white mt-1">Atlantis The Royal</h3>
+          <p id="modalHotelLoc" class="text-xs text-slate-400 mt-0.5">Palm Jumeirah, Dubai</p>
+
+          <div class="mt-5 space-y-3">
+            <div>
+              <label class="text-xs font-semibold text-slate-300 block mb-1">Full Name</label>
+              <input type="text" id="guestName" placeholder="e.g. Umar Mukthar" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3.5 py-2.5 text-sm text-white outline-none focus:border-amber-400" />
+            </div>
+
+            <div>
+              <label class="text-xs font-semibold text-slate-300 block mb-1">Email Address</label>
+              <input type="email" id="guestEmail" placeholder="e.g. guest@luxestay.com" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3.5 py-2.5 text-sm text-white outline-none focus:border-amber-400" />
+            </div>
+
+            <div class="grid grid-cols-2 gap-3">
+              <div>
+                <label class="text-xs font-semibold text-slate-300 block mb-1">Check-in</label>
+                <input type="date" id="modalCheckIn" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-xs text-white outline-none" />
+              </div>
+              <div>
+                <label class="text-xs font-semibold text-slate-300 block mb-1">Nights</label>
+                <select id="modalNights" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-xs text-white outline-none">
+                  <option value="1">1 Night</option>
+                  <option value="2">2 Nights</option>
+                  <option value="3" selected>3 Nights</option>
+                  <option value="5">5 Nights</option>
+                  <option value="7">7 Nights</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Price Breakdown -->
+            <div class="glass-pill p-3.5 rounded-2xl text-xs space-y-1.5 mt-4">
+              <div class="flex justify-between text-slate-400">
+                <span>Nightly Rate:</span>
+                <span id="modalRate" class="font-bold text-white">$480</span>
+              </div>
+              <div class="flex justify-between text-slate-400">
+                <span>Resort Taxes &amp; Fees (10%):</span>
+                <span id="modalTaxes" class="font-bold text-white">$144</span>
+              </div>
+              <div class="flex justify-between text-white font-extrabold text-sm pt-2 border-t border-slate-800">
+                <span>Estimated Total:</span>
+                <span id="modalTotal" class="text-amber-400">$1,584</span>
+              </div>
+            </div>
+          </div>
+
+          <button onclick="confirmBooking()" class="w-full mt-6 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-black py-3.5 rounded-2xl text-sm font-extrabold shadow-xl shadow-amber-500/25 transition-all">
+            Confirm &amp; Generate Confirmation Receipt
+          </button>
+        </div>
+
+        <!-- Step 2: Confirmation Receipt -->
+        <div id="bookingStep2" class="hidden text-center py-4">
+          <div class="w-14 h-14 rounded-full bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 flex items-center justify-center text-2xl mx-auto mb-3">✓</div>
+          <span class="text-xs font-bold uppercase tracking-widest text-emerald-400">Reservation Confirmed!</span>
+          <h3 class="font-serif text-2xl font-bold text-white mt-1">Pack Your Bags!</h3>
+          <p class="text-xs text-slate-400 mt-1">Your luxury suite has been successfully reserved.</p>
+
+          <div class="glass-pill p-4 rounded-2xl text-left text-xs space-y-2 mt-5">
+            <div class="flex justify-between">
+              <span class="text-slate-400">Reservation ID:</span>
+              <span id="receiptId" class="font-mono font-bold text-amber-400">LX-2026-9812</span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-slate-400">Lead Guest:</span>
+              <span id="receiptGuest" class="font-bold text-white">--</span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-slate-400">Property:</span>
+              <span id="receiptHotel" class="font-bold text-white">--</span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-slate-400">Total Charged:</span>
+              <span id="receiptTotal" class="font-extrabold text-emerald-400">--</span>
+            </div>
+          </div>
+
+          <button onclick="closeModal()" class="w-full mt-6 glass-pill hover:bg-slate-800 text-white py-3 rounded-2xl text-xs font-bold transition-all">
+            Close &amp; Return to Catalog
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Hotels Data & Application Scripts -->
+  <script>
+    const hotels = [
+      {
+        id: 1,
+        title: "Atlantis The Royal Resort",
+        city: "Dubai",
+        country: "United Arab Emirates",
+        category: "Suites",
+        price: 480,
+        rating: 4.96,
+        reviews: 420,
+        image: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=800&q=80",
+        amenities: ["Ocean View", "Private Butler", "Infinity Pool", "Helipad Access"]
+      },
+      {
+        id: 2,
+        title: "Four Seasons Hotel George V",
+        city: "Paris",
+        country: "France",
+        category: "Suites",
+        price: 620,
+        rating: 4.98,
+        reviews: 580,
+        image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=800&q=80",
+        amenities: ["Eiffel Tower View", "Michelin Star Dining", "Courtyard Garden", "Luxury Spa"]
+      },
+      {
+        id: 3,
+        title: "Aman Tokyo Sanctuary",
+        city: "Tokyo",
+        country: "Japan",
+        category: "Suites",
+        price: 550,
+        rating: 4.94,
+        reviews: 310,
+        image: "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=800&q=80",
+        amenities: ["Mount Fuji Panorama", "Private Onsen", "Traditional Zen Garden", "Tea Pavilion"]
+      },
+      {
+        id: 4,
+        title: "Soneva Fushi Overwater Reserve",
+        city: "Maldives",
+        country: "Maldives Atoll",
+        category: "Villa",
+        price: 850,
+        rating: 4.99,
+        reviews: 260,
+        image: "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=800&q=80",
+        amenities: ["Water Slide to Ocean", "Private Coral Reef", "Starlight Cinema", "Private Chef"]
+      },
+      {
+        id: 5,
+        title: "The Baccarat Hotel Penthouse",
+        city: "New York",
+        country: "United States",
+        category: "Suites",
+        price: 740,
+        rating: 4.91,
+        reviews: 390,
+        image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=800&q=80",
+        amenities: ["Central Park View", "Crystal Salon", "Indoor Heated Pool", "Sommelier Service"]
+      },
+      {
+        id: 6,
+        title: "Bulgari Resort & Ocean Cliff",
+        city: "Bali",
+        country: "Indonesia",
+        category: "Beachfront",
+        price: 510,
+        rating: 4.95,
+        reviews: 340,
+        image: "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=800&q=80",
+        amenities: ["Cliffside Funicular", "Private Plunge Pool", "Sunset Cliff Lounge", "Balinese Spa"]
+      }
+    ];
+
+    let currentCityFilter = "All";
+    let currentCategoryFilter = "all";
+    let activeBookingHotel = null;
+
+    function renderHotels() {
+      const grid = document.getElementById("hotelGrid");
+      grid.innerHTML = "";
+
+      const filtered = hotels.filter(h => {
+        const cityMatch = currentCityFilter === "All" || h.city.toLowerCase() === currentCityFilter.toLowerCase();
+        const catMatch = currentCategoryFilter === "all" || h.category.toLowerCase() === currentCategoryFilter.toLowerCase();
+        return cityMatch && catMatch;
+      });
+
+      if (filtered.length === 0) {
+        grid.innerHTML = `
+          <div class="col-span-full text-center py-12 glass-card rounded-3xl">
+            <p class="text-amber-400 text-lg font-serif">No luxury properties found matching your selection.</p>
+            <button onclick="resetFilters()" class="mt-4 px-4 py-2 glass-pill text-xs font-bold text-white rounded-xl">Reset Search Filter</button>
+          </div>
+        `;
+        return;
+      }
+
+      filtered.forEach(hotel => {
+        const card = document.createElement("div");
+        card.className = "glass-card rounded-3xl overflow-hidden group hover:border-amber-500/50 transition-all flex flex-col justify-between";
+        card.innerHTML = `
+          <div>
+            <div class="relative h-56 overflow-hidden">
+              <img src="${hotel.image}" alt="${hotel.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-80"></div>
+              
+              <!-- Badges -->
+              <div class="absolute top-4 left-4">
+                <span class="px-3 py-1 rounded-full bg-slate-950/70 text-amber-400 text-[10px] font-extrabold uppercase tracking-wider backdrop-blur-md border border-amber-500/30">
+                  ${hotel.category}
+                </span>
+              </div>
+
+              <div class="absolute top-4 right-4 bg-slate-950/70 px-2.5 py-1 rounded-xl text-xs font-bold text-amber-400 backdrop-blur-md border border-slate-700">
+                ★ ${hotel.rating} <span class="text-slate-400 font-normal">(${hotel.reviews})</span>
+              </div>
+
+              <div class="absolute bottom-3 left-4 right-4">
+                <p class="text-xs text-amber-400 font-medium">📍 ${hotel.city}, ${hotel.country}</p>
+                <h3 class="font-serif text-lg font-bold text-white mt-0.5">${hotel.title}</h3>
+              </div>
+            </div>
+
+            <!-- Amenities -->
+            <div class="p-5">
+              <div class="flex flex-wrap gap-1.5 mb-4">
+                ${hotel.amenities.map(a => `<span class="text-[10px] glass-pill px-2.5 py-1 rounded-lg text-slate-300 font-medium">${a}</span>`).join('')}
+              </div>
+            </div>
+          </div>
+
+          <!-- Bottom Price & Book -->
+          <div class="p-5 pt-0 border-t border-slate-800/80 flex items-center justify-between">
+            <div>
+              <span class="text-[10px] text-slate-500 block uppercase font-bold">Price per night</span>
+              <p class="text-xl font-extrabold text-white font-serif">$${hotel.price} <span class="text-xs text-slate-400 font-normal font-sans">USD</span></p>
+            </div>
+
+            <button onclick="openBooking(${hotel.id})" class="bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-black px-4 py-2.5 rounded-xl text-xs font-extrabold shadow-lg shadow-amber-500/20 transition-all">
+              Reserve Suite
+            </button>
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+    }
+
+    // Modal Operations
+    function openBooking(hotelId) {
+      activeBookingHotel = hotels.find(h => h.id === hotelId);
+      if (!activeBookingHotel) return;
+
+      document.getElementById('modalHotelTitle').textContent = activeBookingHotel.title;
+      document.getElementById('modalHotelLoc').textContent = `${activeBookingHotel.city}, ${activeBookingHotel.country}`;
+      document.getElementById('bookingStep1').classList.remove('hidden');
+      document.getElementById('bookingStep2').classList.add('hidden');
+      updatePrice();
+      document.getElementById('bookingModal').classList.remove('hidden');
+    }
+
+    function closeModal() {
+      document.getElementById('bookingModal').classList.add('hidden');
+    }
+
+    function updatePrice() {
+      if (!activeBookingHotel) return;
+      const nights = parseInt(document.getElementById('modalNights').value) || 1;
+      const rate = activeBookingHotel.price * nights;
+      const tax = Math.round(rate * 0.10);
+      const total = rate + tax;
+
+      document.getElementById('modalRate').textContent = `$${rate.toLocaleString()}`;
+      document.getElementById('modalTaxes').textContent = `$${tax.toLocaleString()}`;
+      document.getElementById('modalTotal').textContent = `$${total.toLocaleString()}`;
+    }
+
+    document.getElementById('modalNights').addEventListener('change', updatePrice);
+
+    function confirmBooking() {
+      const name = document.getElementById('guestName').value.trim() || 'Valued Guest';
+      const nights = document.getElementById('modalNights').value;
+      const total = document.getElementById('modalTotal').textContent;
+      const randId = 'LX-2026-' + Math.floor(1000 + Math.random() * 9000);
+
+      document.getElementById('receiptId').textContent = randId;
+      document.getElementById('receiptGuest').textContent = name;
+      document.getElementById('receiptHotel').textContent = activeBookingHotel.title + ` (${nights} Nights)`;
+      document.getElementById('receiptTotal').textContent = total;
+
+      document.getElementById('bookingStep1').classList.add('hidden');
+      document.getElementById('bookingStep2').classList.remove('hidden');
+    }
+
+    // Quick Filters
+    function quickFilterCity(cityName) {
+      currentCityFilter = cityName;
+      document.getElementById('searchCity').value = cityName;
+      renderHotels();
+      document.getElementById('stays').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function resetFilters() {
+      currentCityFilter = "All";
+      currentCategoryFilter = "all";
+      document.getElementById('searchCity').value = "All";
+      document.querySelectorAll('.cat-pill').forEach(p => p.classList.remove('active-pill', 'border-amber-500', 'bg-amber-500/10', 'text-amber-400'));
+      document.querySelector('[data-cat="all"]').classList.add('active-pill', 'border-amber-500', 'bg-amber-500/10', 'text-amber-400');
+      renderHotels();
+    }
+
+    // Category button clicks
+    document.querySelectorAll('.cat-pill').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.cat-pill').forEach(p => p.classList.remove('active-pill', 'border-amber-500', 'bg-amber-500/10', 'text-amber-400'));
+        btn.classList.add('active-pill', 'border-amber-500', 'bg-amber-500/10', 'text-amber-400');
+        currentCategoryFilter = btn.dataset.cat;
+        renderHotels();
+      });
+    });
+
+    // Search button
+    document.getElementById('searchBtn').addEventListener('click', () => {
+      currentCityFilter = document.getElementById('searchCity').value;
+      renderHotels();
+      document.getElementById('stays').scrollIntoView({ behavior: 'smooth' });
+    });
+
+    // Initial default dates
+    const today = new Date();
+    const nextWeek = new Date(today);
+    nextWeek.setDate(today.getDate() + 5);
+    document.getElementById('checkInDate').value = today.toISOString().split('T')[0];
+    document.getElementById('checkOutDate').value = nextWeek.toISOString().split('T')[0];
+    document.getElementById('modalCheckIn').value = today.toISOString().split('T')[0];
+
+    // Initial render
+    renderHotels();
+  </script>
+</body>
+</html>
